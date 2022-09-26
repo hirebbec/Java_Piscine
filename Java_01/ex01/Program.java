@@ -1,40 +1,15 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Program.java                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hirebbec <hirebbec@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 16:18:14 by hirebbec          #+#    #+#             */
-/*   Updated: 2022/07/19 16:20:40 by hirebbec         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+import java.lang.management.MonitorInfo;
 import java.util.Scanner;
 
 public class Program {
 
-    public static void main(String[] args) {
-	   	int	i = 2;
-		int	sqrt = 1;
-		Scanner in = new Scanner(System.in);
-		int num = in.nextInt();
+	public static void main(String[] args) {
+		User user1 = new User("user1", 1000);
+		User user2 = new User("user2", 2000);
+		User user3 = new User("user3", 3000);
 
-		if (num < 2) {
-			System.err.println("theIllegalArgument");
-			System.exit(-1);
-		}
-		while (sqrt * sqrt < num) {
-			sqrt++;
-		}
-		while (i < sqrt + 1) {
-			if (num % i == 0) {
-				System.out.println("false " + (i - 1));
-				System.exit(0);
-			}
-			i++;
-		}
-		System.out.println("true " + (i - 2));
-		System.exit(0);
+		System.out.println(user1.getName() + "  " + user1.getBalance() + "  " + user1.getIdentifier());
+		System.out.println(user2.getName() + "  " + user2.getBalance() + "  " + user2.getIdentifier());
+		System.out.println(user3.getName() + "  " + user3.getBalance() + "  " + user3.getIdentifier());
 	}
 }
